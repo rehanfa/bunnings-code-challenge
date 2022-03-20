@@ -80,7 +80,15 @@ public class CompanyServiceTest {
         product.setBarcodes(Arrays.asList(barcodeArray));
         companyService.getConsolidatedProducts().add(product);
 
+
         assertTrue(companyService.getConsolidatedProducts().size() == 1);
+
+        product = new Product();
+        barcodeArray =  new String[] {"4", "17", "9" ,"12", "14"};
+        product.setBarcodes(Arrays.asList(barcodeArray));
+        companyService.getConsolidatedProducts().add(product);
+
+        assertTrue(companyService.getConsolidatedProducts().size() == 2);
 
     }
 }
